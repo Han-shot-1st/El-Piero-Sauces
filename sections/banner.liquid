@@ -28,6 +28,8 @@
       {%- else -%}
         {{ 'image' | placeholder_svg_tag: 'placeholder-svg banner__image banner__image--fixed' }}
       {%- endif -%}
+      {%- comment -%}Text Box Toggle Added{%- endcomment -%}
+      {% if section.settings.on_off != 'off' %}
       <div class="banner-text-box-wrapper banner-text-box-wrapper-{{ textbox_positions[0] }} banner-text-box-wrapper-{{ textbox_positions[1]}} banner-text-box-wrapper-{{ section.settings.banner_height }}">
         <div class="banner-text-box-{{ textbox_positions[0] }}">
           <div class="banner-text-box__content" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }}">
@@ -43,6 +45,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -99,6 +102,22 @@
         "zh-CN": "图片",
         "zh-TW": "圖片"
       }
+    },
+    {
+      "type": "select",
+      "id": "on_off",
+      "label": "Text Box Display",
+      "options": [
+        {
+          "value": "on",
+          "label": "Display On"
+        },
+        {
+          "value": "off",
+          "label": "Display Off"
+        }
+  ],
+  "default": "on"
     },
     {
       "type": "text",

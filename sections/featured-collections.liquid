@@ -8,7 +8,11 @@
       assign product_limit = 36
   endcase
 -%}
-
+{% unless section.settings.collection_heading == blank %}
+<div class="collection-headline">
+<h2>{{section.settings.collection_heading}}</h2>
+</div>
+{% endunless %}
 <section class="featured-collections" data-section-id="{{ section.id }}" data-section-type="featured-collections"{% if section.blocks.size == 1 %} data-single-collection="true"{% endif %}{% if settings.show_product_modal %} data-product-modal="true"{% endif %}{% if section.settings.quick_add %} data-quick-add="true"{% endif %}>
   {%- if section.blocks.size > 0 -%}
     <div class="featured-collections__header" data-sticky-element>
@@ -251,6 +255,11 @@
     }
   ],
   "settings": [
+    {
+      "type": "text",
+      "id": "collection_heading",
+      "label": "Collection Heading"
+    },
     {
       "type": "select",
       "id": "list_size",

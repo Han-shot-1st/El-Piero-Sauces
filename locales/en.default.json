@@ -187,6 +187,7 @@
     "form": {
       "name": "Name",
       "email": "Email",
+      "order": "Order-Number",
       "phone": "Phone Number",
       "message": "Message",
       "send": "Send",
