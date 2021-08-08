@@ -16,3 +16,47 @@
     background-color: rgb(45, 79, 30);
     color: white;
   }
+
+  /* ----------------FAQ section-------------*/
+
+  .faq {
+    overflow: hidden;
+}
+
+.faq .tab .tab-toggle {
+    display: none;
+}
+.faq .tab .tab-label {
+    padding: 1em;
+    background-color: #2D4E1D;
+    display: flex;
+    justify-content: space-between;
+    color:white;
+    font-family: sans-serif;
+    font-size: 1.2em;
+}
+.faq .tab-label::after {
+	content: '\276F';
+	transition: all .4s;
+}
+
+.faq .tab-toggle:checked~.tab-label::after {
+	transform: rotate(0.25turn);
+}
+.faq .tab .tab-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.4s;
+    font-family: sans-serif;
+    font-size: 1.1em;
+    
+    
+}
+.faq .tab .tab-toggle:checked~.tab-content {
+    max-height: 100vh;
+    padding: 1em 1em;
+    transition: ease all 0.4s;
+}
+.headline {
+  margin-bottom: 1em;
+}
